@@ -8,13 +8,24 @@ const port = 3000;
 // Use CORS middleware to allow cross-origin requests
 app.use(cors());
 
+
+// IH DEV DB ENV Details
 const config = {
-    host: '10.232.65.27',
+    host: '10.232.65.67',
     port: 5432,
     database: 'invhub',
     user: 'invhub',
     password: 'password111111111111111'
 };
+
+// IH QA DB ENV Details
+// const config= {
+//     host: '10.232.66.121',
+//     port: 5432,
+//     database: 'ayasdi',
+//     user: 'ayasdi',
+//     password: 'DCipwR5ITnwx'
+// };
 
 app.get('/getLatestIHLoginCode', async (req, res) => {
     const client = new Client(config);
